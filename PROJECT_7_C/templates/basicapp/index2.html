@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% extends "basicapp/index.html"%}
+{% block body_block%}
+{% load staticfiles %}
+<div class="container">
+
+  <nav class="navbar navbar-expand-md navbar-inverse navbar-fixed-top">
+  <a class="navbar-brand" href="{% url 'search_form'%}">Price Comparetor</a>
+
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="#about">ABOUT US</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<hr>
+</div>
+<div class="container">
+  <table class="table table-sm">
+    <thead>
+      <th><h1>FLIPKART</h1></th>
+      <th><h1>AMAZON</h1></th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{% for data in flipkart_data%}
+        <p>{{data}}</p>
+      {% endfor %}</td>
+      <td>{% for data in amazon_data%}
+      <p>{{data}}</p>
+    {% endfor %}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+
+
+{% endblock %}
